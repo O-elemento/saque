@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saldo Bancario</title>
+    
+</head>
+<body>
+    <form>
+        <p>saque <input type="number"  id="saq"> </p>
+        <p>seu saldo:<input type="number"  id="sald" readonly  > </p>
+        <button type="button" id="button" onclick="validarSaque()"> sacar </button>
+  
+        </form>
+    <script>
+           let saldo = window.prompt("coloque saldo");
+           parseFloat(document.getElementById("sald").value =saldo);
+           
+
+        function validarSaque(){
+            let saqu = parseFloat(document.getElementById("saq").value);
+            saldo = parseFloat(document.getElementById("sald").value);
+            if(saqu <= saldo){
+
+                let  operacao = parseFloat(saldo) - parseFloat(saqu);
+                parseFloat(document.getElementById("sald").value = operacao);
+            }else{
+                alert("seu saldo nao é o sufuciente");
+            }
+            
+            
+        }
+
+    </script>
+   
+</body>
+</html>
